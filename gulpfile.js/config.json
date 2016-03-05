@@ -1,0 +1,36 @@
+{
+  "clean": [
+    "dist/**/.DS_Store"
+  ],
+  "scripts": {
+    "src": ["src/*.js"],
+    "uglify": {
+      "src": ["src/*.js"],
+      "sourcemap": {
+        "includeContent": false,
+        "sourceRoot" : "../src/"
+      }
+    },
+    "dest": "dist",
+    "banner": ["/**",
+      " * @license <%= pkg.name %> <%= pkg.version %> Copyright (c) <%= pkg.author %>",
+      " * <%= pkg.description %>",
+      " * Available via the <%= pkg.license %> license.",
+      " * see: <%= pkg.homepage %> for details",
+      " */",
+      ""]
+  },
+  "build": [
+    "scripts-uglify"
+  ],
+  "watch": [
+    {
+      "files": [
+        "src/*.js"
+      ],
+      "tasks": [
+        "scripts-uglify"
+      ]
+    }
+  ]
+}

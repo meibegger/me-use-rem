@@ -1,0 +1,29 @@
+{
+  "name": "me-use-rem",
+  "version": "0.1.0",
+  "homepage": "https://github.com/meibegger/me-use-rem",
+  "authors": [
+    "Mandana Eibegger <scripts@schoener.at>"
+  ],
+  "description": "A utility script to track font-resize and convert values between px and rem",
+  "main": "src/me-use-rem.js",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "accessibility",
+    "a11y",
+    "font size",
+    "rem",
+    "px",
+    "convert units",
+    "font resize",
+    "CSS",
+    "javascript"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meibegger/me-use-rem.git"
+  }
+}

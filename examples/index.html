@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>meUse Example</title>
+
+  <!-- include meUseRem JS -->
+  <script type="text/javascript" src="../dist/me-use-rem.min.js"></script>
+
+  <!-- Example using meUseRem -->
+  <script type="text/javascript">
+    window.addEventListener('DOMContentLoaded', function loaded() {
+      window.removeEventListener('DOMContentLoaded', loaded);
+
+      var rem2Px = document.getElementById('rem2Px')
+        , px2Rem = document.getElementById('px2Rem')
+        , pxHd = document.getElementById('pxHd')
+        , px2RemHd = document.getElementById('px2RemHd')
+        , h1 = document.getElementsByTagName('h1')[0]
+      ;
+
+      function displayValues () {
+
+        /* convert rem to px */
+        rem2Px.innerHTML = meUseRem.rem2Px(1);
+
+        /* convert px to rem */
+        px2Rem.innerHTML = meUseRem.px2Rem(20);
+
+        var h1Height = h1.offsetHeight;
+        pxHd.innerHTML = h1Height;
+        px2RemHd.innerHTML = meUseRem.px2Rem(h1Height);
+
+        console.log(parseFloat(window.getComputedStyle(document.getElementsByTagName('html')[0]).fontSize));
+
+      }
+
+      window.addEventListener('resize',displayValues);
+      displayValues();
+
+      document.getElementById('destroy')
+        .addEventListener('click', function () {
+
+          /* remove the meUseRem */
+          meUseRem.destroy()
+
+        });
+
+      document.getElementById('init')
+        .addEventListener('click', function () {
+
+          /* re-initialize meUseRem */
+          meUseRem.init()
+
+        });
+
+      document.getElementById('init1Sec')
+        .addEventListener('click', function () {
+
+          /* re-initialize meUseRem with a log poll-interval-time of 1sec */
+          meUseRem.init(1000)
+
+        });
+
+    });
+  </script>
+
+  <!-- styles to show rem value on changed base-font-size -->
+  <style type="text/css">
+    html {
+      font-size: 1em;
+    }
+    @media all and (max-width: 900px) {
+      html {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h1>meUseRem Example</h1>
+
+<p>Resize the font in your browser to see the below values changing.</p>
+
+<hr>
+
+<p>
+  1rem = <strong id="rem2Px"></strong>px
+</p>
+<p>
+  20px = <strong id="px2Rem"></strong>rem
+</p>
+<p>
+  The height of the headline is <strong id="pxHd"></strong>px / <strong id="px2RemHd"></strong>rem.
+</p>
+
+<button type="button" value="destroy meUseRem" id="destroy">
+  Destroy meUseRem!
+</button>
+<button type="button" value="initialize meUseRem" id="init">
+  Re-Initialize meUseRem!
+</button>
+<button type="button" value="initialize meUseRem" id="init1Sec">
+  Re-Initialize meUseRem with a poll-interval of 1sec!
+</button>
+
+</body>
+</html>
