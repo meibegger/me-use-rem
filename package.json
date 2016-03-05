@@ -1,6 +1,6 @@
 {
   "name": "me-use-rem",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A utility script to track font-resize and convert values between px and rem",
   "main": "src/me-use-rem.js",
   "repository": {
