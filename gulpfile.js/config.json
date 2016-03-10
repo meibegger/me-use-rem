@@ -9,7 +9,8 @@
       "sourcemap": {
         "includeContent": false,
         "sourceRoot" : "../src/"
-      }
+      },
+      "rename": "me-use-rem.min.js"
     },
     "dest": "dist",
     "banner": ["/**",

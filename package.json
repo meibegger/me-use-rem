@@ -2,7 +2,7 @@
   "name": "me-use-rem",
   "version": "1.0.0",
   "description": "A utility script to track font-resize and convert values between px and rem",
-  "main": "src/me-use-rem.js",
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/meibegger/me-use-rem.git"

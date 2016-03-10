@@ -16,7 +16,7 @@ gulp.task('_scripts-uglify', ['scripts-check'], function() {
     .pipe(sourcemaps.init())
     .pipe(uglify())
     .pipe(footer('\n'+banner.join('\n'), { pkg : pkg } ))
-    .pipe(rename({extname: '.min.js'}))
+    .pipe(rename(config.scripts.uglify.rename))
     .pipe(sourcemaps.write('.',config.scripts.uglify.sourcemap))
     .pipe(gulp.dest(config.scripts.dest));
 
